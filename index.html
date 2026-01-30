@@ -111,31 +111,28 @@
       }
       100% {
         transform: translate(-50%, -50%) scale(1);
-        opacity: 0;
+        opacity: 1;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="card">
+  <div class="card" id="cardContent">
     <h1>Hello Bangaram 💖</h1>
     <p>You are awesome! Hope you are having a great day 😄</p>
     <button class="btn" onclick="showMessage()">Click Me</button>
   </div>
 
-  <!-- Zoom text message -->
   <div id="loveMessage">Love youuu Bava 💖</div>
 
   <script>
     function showMessage() {
+      document.getElementById("cardContent").style.display = "none";
       const msg = document.getElementById("loveMessage");
-      msg.classList.remove("showMessage");
-      void msg.offsetWidth; 
       msg.classList.add("showMessage");
     }
 
-    // Create floating hearts
     function createHeart() {
       const heart = document.createElement("div");
       heart.className = "heart";
